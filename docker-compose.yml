@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   sqlserver:
-    image: mcr.microsoft.com/mssql/server:2022-latest
+    build: .
     container_name: sqlserver
     ports:
       - "1433:1433"
@@ -11,8 +11,10 @@ services:
       MSSQL_PID: "Express"
     volumes:
       - sql_data:/var/opt/mssql
+      - ./scripts:/scripts
     networks:
       - monitoring
+    user: root
 
   delete-contact-producer-microservice:
     image: caiofabiogomes/tech-challenge-fiap-microsservice-producer-delete-contact:latest
@@ -70,8 +72,8 @@ services:
     networks:
       - monitoring
     ports:
-      - "5672:5672"  # Porta padrão do RabbitMQ
-      - "15672:15672" # Porta do Management UI
+      - "5672:5672"
+      - "15672:15672"
     environment:
       RABBITMQ_DEFAULT_USER: guest
       RABBITMQ_DEFAULT_PASS: guest
