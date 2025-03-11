@@ -1,7 +1,3 @@
-[submodule "TechChallengeFiapMicrosserviceProducerDeleteContact"]
-	path = TechChallengeFiapMicrosserviceProducerDeleteContact
-	url = https://github.com/caiofabiogomes/TechChallengeFiapMicrosserviceProducerDeleteContact
-
 [submodule "TechChallengeFiapMicrosserviceConsumerDeleteContact"]
 	path = TechChallengeFiapMicrosserviceConsumerDeleteContact
 	url = https://github.com/ErickGoldberg/TechChallengeFiapMicrosserviceConsumerDeleteContact
