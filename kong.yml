@@ -1,12 +1,12 @@
 _format_version: "3.0"
 
 services:
-  - name: delete-contacts-producer-microservice
-    host: delete-contact-producer-microservice
+  - name: contacts-producer-microservice
+    host: contact-producer-microservice
     port: 8080
     protocol: http
     routes:
-      - name: delete-contacts-producer
+      - name: contacts-producer-microservice
         paths: ["/"]  
         methods:
           - DELETE 

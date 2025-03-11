@@ -16,9 +16,9 @@ services:
       - monitoring
     user: root
 
-  delete-contact-producer-microservice:
+  contact-producer-microservice:
     image: mauropy01/tc-fiap-producers-contacts:latest
-    container_name: delete-contact-producer-microservice
+    container_name: contact-producer-microservice
     ports:
       - "8080:8080"
     env_file:
