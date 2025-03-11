@@ -1,0 +1,25 @@
+_format_version: "3.0"
+
+services:
+  - name: delete-contacts-producer-microservice
+    host: delete-contact-producer-microservice
+    port: 8080
+    protocol: http
+    routes:
+      - name: delete-contacts-producer
+        paths: ["/"]  
+        methods:
+          - DELETE 
+          - POST
+          - PUT
+
+plugins:
+  - name: rate-limiting
+    config:
+      second: 5 
+      minute: 10
+      hour: 1000
+      limit_by: consumer
+  - name: prometheus
+    config:
+      per_consumer: true
