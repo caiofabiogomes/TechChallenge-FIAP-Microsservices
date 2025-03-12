@@ -8,10 +8,6 @@ services:
     routes:
       - name: contacts-producer-microservice
         paths: ["/"]  
-        methods:
-          - DELETE 
-          - POST
-          - PUT
 
 plugins:
   - name: rate-limiting
