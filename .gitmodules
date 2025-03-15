@@ -7,3 +7,6 @@
 [submodule "TCFiapConsultContactsFunction"]
 	path = TCFiapConsultContactsFunction
 	url = https://github.com/ErickGoldberg/TCFiapConsultContactsFunction.git
+[submodule "TCFiapConsumerDLQ"]
+	path = TCFiapConsumerDLQ
+	url = https://github.com/ErickGoldberg/TCFiapConsumerDLQ.git
