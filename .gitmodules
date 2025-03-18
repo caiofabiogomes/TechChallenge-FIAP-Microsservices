@@ -4,3 +4,9 @@
 [submodule "TechChallengeFiapMicrosserviceProducerCreateContact"]
 	path = TechChallengeFiapMicrosserviceProducerCreateContact
 	url = https://github.com/Mauro-Benitez/TechChallengeFiapMicrosserviceProducerCreateContact
+[submodule "TCFiapConsultContactsFunction"]
+	path = TCFiapConsultContactsFunction
+	url = https://github.com/ErickGoldberg/TCFiapConsultContactsFunction.git
+[submodule "TCFiapConsumerDLQ"]
+	path = TCFiapConsumerDLQ
+	url = https://github.com/ErickGoldberg/TCFiapConsumerDLQ.git
