@@ -39,7 +39,29 @@ services:
       - rabbitmq
     networks:
       - monitoring
-    
+  
+  update-contact-consumer-microservice:
+    image: caiofabiogomes/tc-fiap-consumer-update:latest
+    container_name: update-contact-consumer-microservice
+    ports:
+      - "8082:8082"
+    env_file:
+      - .env
+    depends_on:
+      - rabbitmq
+    networks:
+      - monitoring
+
+  consulta-contact-microservice:
+    image: caiofabiogomes/tc-fiap-az-get-contacts:latest
+    container_name: consulta-contact-microservice
+    ports:
+      - "7071:80"
+    env_file:
+      - .env
+    networks:
+      - monitoring
+  
 
 
   prometheus:

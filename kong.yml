@@ -7,7 +7,16 @@ services:
     protocol: http
     routes:
       - name: contacts-producer-microservice
-        paths: ["/"]  
+        paths: ["/"]
+
+  - name: azure-function-service
+    host: consulta-contact-microservice
+    port: 7071
+    protocol: http
+    routes:
+      - name: azure-function-route
+        paths: ["/GetContactsFunction"]
+        strip_path: false
 
 plugins:
   - name: rate-limiting
