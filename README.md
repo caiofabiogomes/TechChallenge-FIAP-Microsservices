@@ -56,7 +56,7 @@ Após subir os serviços, é possível visualizar os dashboards de monitoramento
 ## Rotas
  
 - **Cadastrar contato, Excluir, Atualizar**: `http://localhost:8000/Contacts`
-- **Consultar contato**: `http://localhost:8000/GetContactsFunction`
+- **Consultar contato**: `http://localhost:8000/api/GetContactsFunction`
 
 ## Colaboradores
 Agradecemos a todos que contribuíram para o desenvolvimento deste projeto:
