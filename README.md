@@ -38,6 +38,8 @@ Para facilitar a reutilização de código e padronizar a infraestrutura, foi cr
 - **Consumer de Cadastro:** [Link do repositório](https://github.com/caiofabiogomes/TechChallengeFiapMicrosserviceConsumerCreateContact)
 - **Consumer de Atualização:** [Link do repositório](https://github.com/ffvieira/TechChallengeFiapMicrosserviceConsumerUpdateContact)
 - **Consumer de Remoção:** [Link do repositório](https://github.com/ErickGoldberg/TechChallengeFiapMicrosserviceConsumerDeleteContact)
+- **Pacote Nuget De Infraestrutura:** [Link do repositório](https://github.com/caiofabiogomes/TechChallenge.SDK)
+
 
 ## Como Executar
 1. Clone os repositórios.
@@ -56,7 +58,7 @@ Após subir os serviços, é possível visualizar os dashboards de monitoramento
 ## Rotas
  
 - **Cadastrar contato, Excluir, Atualizar**: `http://localhost:8000/Contacts`
-- **Consultar contato**: `http://localhost:8000/GetContactsFunction`
+- **Consultar contato**: `http://localhost:8000/api/GetContactsFunction`
 
 ## Colaboradores
 Agradecemos a todos que contribuíram para o desenvolvimento deste projeto:
