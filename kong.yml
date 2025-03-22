@@ -11,11 +11,11 @@ services:
 
   - name: azure-function-service
     host: consulta-contact-microservice
-    port: 7071
+    port: 80
     protocol: http
     routes:
       - name: azure-function-route
-        paths: ["/GetContactsFunction"]
+        paths: ["/api/GetContactsFunction"]
         strip_path: false
 
 plugins:

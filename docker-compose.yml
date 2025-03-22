@@ -63,6 +63,7 @@ services:
       - rabbitmq
     networks:
       - monitoring
+  
   consulta-contact-microservice:
     image: caiofabiogomes/tc-fiap-az-get-contacts:latest
     container_name: consulta-contact-microservice
