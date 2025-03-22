@@ -33,11 +33,11 @@ Todo o ambiente foi configurado utilizando **Docker Compose**, incluindo os segu
 Para facilitar a reutilização de código e padronizar a infraestrutura, foi criado um **pacote NuGet** contendo a implementação da infraestrutura de banco de dados e das mensagens de mensageria. O pacote foi publicado no **GitHub Packages**.
 
 ## Repositórios
-- **Consulta de Contatos:** [[Link do repositório](https://github.com/ErickGoldberg/TCFiapConsultContactsFunction)]
-- **Producer:** [[Link do repositório](https://github.com/Mauro-Benitez/TechChallengeFiapMicrosserviceProducerCreateContact)]
-- **Consumer de Cadastro:** [[Link do repositório](https://github.com/caiofabiogomes/TechChallengeFiapMicrosserviceConsumerCreateContact)]
-- **Consumer de Atualização:** [[Link do repositório](https://github.com/ffvieira/TechChallengeFiapMicrosserviceConsumerUpdateContact)]
-- **Consumer de Remoção:** [[Link do repositório](https://github.com/ErickGoldberg/TechChallengeFiapMicrosserviceConsumerDeleteContact)]
+- **Consulta de Contatos:** [Link do repositório](https://github.com/ErickGoldberg/TCFiapConsultContactsFunction)
+- **Producer:** [Link do repositório](https://github.com/Mauro-Benitez/TechChallengeFiapMicrosserviceProducerCreateContact)
+- **Consumer de Cadastro:** [Link do repositório](https://github.com/caiofabiogomes/TechChallengeFiapMicrosserviceConsumerCreateContact)
+- **Consumer de Atualização:** [Link do repositório](https://github.com/ffvieira/TechChallengeFiapMicrosserviceConsumerUpdateContact)
+- **Consumer de Remoção:** [Link do repositório](https://github.com/ErickGoldberg/TechChallengeFiapMicrosserviceConsumerDeleteContact)
 
 ## Como Executar
 1. Clone os repositórios.
