@@ -52,6 +52,17 @@ services:
     networks:
       - monitoring
 
+  delete-contact-consumer-microservice:
+    image: caiofabiogomes/tc-fiap-delete-consumer:latest
+    container_name: delete-contact-consumer-microservice
+    ports:
+      - "8083:8083"
+    env_file:
+      - .env
+    depends_on:
+      - rabbitmq
+    networks:
+      - monitoring
   consulta-contact-microservice:
     image: caiofabiogomes/tc-fiap-az-get-contacts:latest
     container_name: consulta-contact-microservice
