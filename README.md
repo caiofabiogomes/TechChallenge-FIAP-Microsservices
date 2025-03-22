@@ -11,6 +11,7 @@ Este projeto foi desenvolvido como parte do desafio da pós-graduação em Arqui
 - **MassTransit com RabbitMQ** (Mensageria)
 - **Kong** (API Gateway)
 - **Azure Function**
+= **Geração de pacote nuget**
 
 ## Arquitetura
 O projeto foi estruturado em microsserviços independentes, conforme detalhado abaixo:
