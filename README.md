@@ -38,6 +38,8 @@ Para facilitar a reutilização de código e padronizar a infraestrutura, foi cr
 - **Consumer de Cadastro:** [Link do repositório](https://github.com/caiofabiogomes/TechChallengeFiapMicrosserviceConsumerCreateContact)
 - **Consumer de Atualização:** [Link do repositório](https://github.com/ffvieira/TechChallengeFiapMicrosserviceConsumerUpdateContact)
 - **Consumer de Remoção:** [Link do repositório](https://github.com/ErickGoldberg/TechChallengeFiapMicrosserviceConsumerDeleteContact)
+- **Pacote Nuget De Infraestrutura:** [Link do repositório](https://github.com/caiofabiogomes/TechChallenge.SDK)
+
 
 ## Como Executar
 1. Clone os repositórios.
