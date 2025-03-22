@@ -61,6 +61,13 @@ Após subir os serviços, é possível visualizar os dashboards de monitoramento
 - **Cadastrar contato, Excluir, Atualizar**: `http://localhost:8000/Contacts`
 - **Consultar contato**: `http://localhost:8000/api/GetContactsFunction`
 
+## Postman Collection
+
+Para testar as APIs, importe a collection do Postman:
+
+[Baixar a Collection](./postman/techChallengeFIAP.postman_collection.json)
+
+
 ## Colaboradores
 Agradecemos a todos que contribuíram para o desenvolvimento deste projeto:
 - [@caiofabiogomes](https://github.com/caiofabiogomes)
