@@ -17,7 +17,7 @@ O projeto foi estruturado em microsserviços independentes, conforme detalhado a
 
 ### Microsserviços
 1. **Consulta de contatos** → Implementado como uma **Azure Function**.
-2. **Producer** → Responsável por expor rotas para **cadastrar, atualizar e remover contatos**. Implementado em **.NET 8**.
+2. **Producer** → Responsável por expor rotas para **cadastrar, atualizar e remover contatos**.
 3. **Consumer de Cadastro** → Processa mensagens da fila para **cadastrar contatos**.
 4. **Consumer de Atualização** → Processa mensagens da fila para **atualizar contatos**.
 5. **Consumer de Remoção** → Processa mensagens da fila para **remover contatos**.
