@@ -10,3 +10,12 @@
 [submodule "TCFiapConsumerDLQ"]
 	path = TCFiapConsumerDLQ
 	url = https://github.com/ErickGoldberg/TCFiapConsumerDLQ.git
+[submodule "TechChallengeFiapMicrosserviceConsumerCreateContact"]
+	path = TechChallengeFiapMicrosserviceConsumerCreateContact
+	url = https://github.com/caiofabiogomes/TechChallengeFiapMicrosserviceConsumerCreateContact
+[submodule "TechChallengeFiapMicrosserviceConsumerUpdateContact"]
+	path = TechChallengeFiapMicrosserviceConsumerUpdateContact
+	url = https://github.com/ffvieira/TechChallengeFiapMicrosserviceConsumerUpdateContact
+[submodule "TechChallenge.SDK"]
+	path = TechChallenge.SDK
+	url = https://github.com/caiofabiogomes/TechChallenge.SDK
