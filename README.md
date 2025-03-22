@@ -34,11 +34,11 @@ Todo o ambiente foi configurado utilizando **Docker Compose**, incluindo os segu
 Para facilitar a reutilização de código e padronizar a infraestrutura, foi criado um **pacote NuGet** contendo a implementação da infraestrutura de banco de dados e das mensagens de mensageria. O pacote foi publicado no **GitHub Packages**.
 
 ## Repositórios
-- **Consulta de Contatos:** [Link do repositório](https://github.com/ErickGoldberg/TCFiapConsultContactsFunction)
+- **Consulta de Contatos:** [Link do repositório](https://github.com/caiofabiogomes/TCFiapConsultContactsFunction)
 - **Producer:** [Link do repositório](https://github.com/Mauro-Benitez/TechChallengeFiapMicrosserviceProducerCreateContact)
 - **Consumer de Cadastro:** [Link do repositório](https://github.com/caiofabiogomes/TechChallengeFiapMicrosserviceConsumerCreateContact)
-- **Consumer de Atualização:** [Link do repositório](https://github.com/ffvieira/TechChallengeFiapMicrosserviceConsumerUpdateContact)
-- **Consumer de Remoção:** [Link do repositório](https://github.com/ErickGoldberg/TechChallengeFiapMicrosserviceConsumerDeleteContact)
+- **Consumer de Atualização:** [Link do repositório](https://github.com/caiofabiogomes/TechChallengeFiapMicrosserviceConsumerUpdateContact)
+- **Consumer de Remoção:** [Link do repositório](https://github.com/caiofabiogomes/TechChallengeFiapMicrosserviceConsumerDeleteContact)
 - **Pacote Nuget De Infraestrutura:** [Link do repositório](https://github.com/caiofabiogomes/TechChallenge.SDK)
 
 
