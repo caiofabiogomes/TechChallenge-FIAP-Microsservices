@@ -72,7 +72,7 @@ Para testar as APIs, importe a collection do Postman:
 Agradecemos a todos que contribuíram para o desenvolvimento deste projeto:
 - [@caiofabiogomes](https://github.com/caiofabiogomes)
 - [@ErickGoldberg](https://github.com/ErickGoldberg)
-- [@mauro_benitez](https://github.com/mauro_benitez)
+- [@mauro_benitez](https://github.com/Mauro-Benitez)
 - [@ffvieira](https://github.com/ffvieira)
 
 
