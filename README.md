@@ -11,7 +11,7 @@ Este projeto foi desenvolvido como parte do desafio da pós-graduação em Arqui
 - **MassTransit com RabbitMQ** (Mensageria)
 - **Kong** (API Gateway)
 - **Azure Function**
-= **Geração de pacote nuget**
+- **Geração de pacote nuget**
 
 ## Arquitetura
 O projeto foi estruturado em microsserviços independentes, conforme detalhado abaixo:
@@ -34,11 +34,11 @@ Todo o ambiente foi configurado utilizando **Docker Compose**, incluindo os segu
 Para facilitar a reutilização de código e padronizar a infraestrutura, foi criado um **pacote NuGet** contendo a implementação da infraestrutura de banco de dados e das mensagens de mensageria. O pacote foi publicado no **GitHub Packages**.
 
 ## Repositórios
-- **Consulta de Contatos:** [Link do repositório](https://github.com/ErickGoldberg/TCFiapConsultContactsFunction)
+- **Consulta de Contatos:** [Link do repositório](https://github.com/caiofabiogomes/TCFiapConsultContactsFunction)
 - **Producer:** [Link do repositório](https://github.com/Mauro-Benitez/TechChallengeFiapMicrosserviceProducerCreateContact)
 - **Consumer de Cadastro:** [Link do repositório](https://github.com/caiofabiogomes/TechChallengeFiapMicrosserviceConsumerCreateContact)
-- **Consumer de Atualização:** [Link do repositório](https://github.com/ffvieira/TechChallengeFiapMicrosserviceConsumerUpdateContact)
-- **Consumer de Remoção:** [Link do repositório](https://github.com/ErickGoldberg/TechChallengeFiapMicrosserviceConsumerDeleteContact)
+- **Consumer de Atualização:** [Link do repositório](https://github.com/caiofabiogomes/TechChallengeFiapMicrosserviceConsumerUpdateContact)
+- **Consumer de Remoção:** [Link do repositório](https://github.com/caiofabiogomes/TechChallengeFiapMicrosserviceConsumerDeleteContact)
 - **Pacote Nuget De Infraestrutura:** [Link do repositório](https://github.com/caiofabiogomes/TechChallenge.SDK)
 
 
@@ -61,11 +61,18 @@ Após subir os serviços, é possível visualizar os dashboards de monitoramento
 - **Cadastrar contato, Excluir, Atualizar**: `http://localhost:8000/Contacts`
 - **Consultar contato**: `http://localhost:8000/api/GetContactsFunction`
 
+## Postman Collection
+
+Para testar as APIs, importe a collection do Postman:
+
+[Baixar a Collection](./postman/techChallengeFIAP.postman_collection.json)
+
+
 ## Colaboradores
 Agradecemos a todos que contribuíram para o desenvolvimento deste projeto:
 - [@caiofabiogomes](https://github.com/caiofabiogomes)
 - [@ErickGoldberg](https://github.com/ErickGoldberg)
-- [@mauro_benitez](https://github.com/mauro_benitez)
+- [@mauro_benitez](https://github.com/Mauro-Benitez)
 - [@ffvieira](https://github.com/ffvieira)
 
 
