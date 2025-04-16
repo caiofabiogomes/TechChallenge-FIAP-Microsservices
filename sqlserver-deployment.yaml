@@ -26,6 +26,9 @@ spec:
           value: "YourStrong!Password"
         - name: MSSQL_PID
           value: "Express"
+        volumeMounts:
+        - name: mssql-data
+          mountPath: /var/opt/mssql
       volumes:
       - name: mssql-data
         persistentVolumeClaim:
