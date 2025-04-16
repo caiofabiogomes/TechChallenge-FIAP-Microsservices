@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: contacts-producer-deployment
+  labels:
+    app: contacts-producer
+  annotations:
+    type: "producer"
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: contacts-producer
+  template:
+    metadata:
+      labels:
+        app: contacts-producer
+    spec:
+      containers:
+      - name: contacts-producer
+        image: mauropy01/tc-fiap-producers-contacts:latest
+        ports:
+        - containerPort: 8081
+        env:
+        - name: RABBITMQ_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: contacts-producer-configmap
+              key: rabbitmq_host

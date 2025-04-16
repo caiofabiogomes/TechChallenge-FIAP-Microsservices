@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sqlserver-scripts
+data:
+  entrypoint.sh: |
+    #!/bin/bash
+    echo "Aguardando o SQL Server iniciar..."
+    sleep 30
+
+    echo "Executando script init-database.sql..."
+    /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P "$SA_PASSWORD" -i /scripts/init-database.sql
+
+    echo "SQL Server iniciado. Mantendo o contêiner ativo..."
+    sleep infinity
+
+  init-database.sql: |
+    IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'ContactsDb')
+    BEGIN
+        CREATE DATABASE ContactsDb;
+    END;
+    GO
+
+    USE ContactsDb;
+    GO
+
+    IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Contacts')
+    BEGIN
+        CREATE TABLE [Contacts] (
+            [Id] uniqueidentifier NOT NULL,
+            [FirstName] nvarchar(max) NOT NULL,
+            [LastName] nvarchar(max) NOT NULL,
+            [EmailAddress] nvarchar(max) NOT NULL,
+            [PhoneDDD] int NOT NULL,
+            [PhoneNumber] int NOT NULL,
+            CONSTRAINT [PK_Contacts] PRIMARY KEY ([Id])
+        );
+    END;
+    GO
