@@ -1,0 +1,48 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sql-init-scripts
+data:
+  init.sql: |
+    IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'ContactsDb')
+    BEGIN
+        CREATE DATABASE ContactsDb;
+    END;
+    GO
+
+    USE ContactsDb;
+    GO
+
+    IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Contacts')
+    BEGIN
+        CREATE TABLE [Contacts] (
+            [Id] uniqueidentifier NOT NULL,
+            [FirstName] nvarchar(max) NOT NULL,
+            [LastName] nvarchar(max) NOT NULL,
+            [EmailAddress] nvarchar(max) NOT NULL,
+            [PhoneDDD] int NOT NULL,
+            [PhoneNumber] int NOT NULL,
+            CONSTRAINT [PK_Contacts] PRIMARY KEY ([Id])
+        );
+    END;
+    GO
+  init.sh: |
+    #!/bin/bash
+    echo "Aguardando SQL Server iniciar..."
+
+    # Loop até o SQL Server estar pronto
+    for i in {1..30}; do
+      /opt/mssql-tools/bin/sqlcmd -S sqlserver-service -U sa -P 'YourStrong!Password' -Q "SELECT 1" > /dev/null 2>&1
+      if [ $? -eq 0 ]; then
+        echo "SQL Server está pronto!"
+        break
+      fi
+      echo "Ainda aguardando... tentativas restantes: $((30 - i))"
+      sleep 5
+    done
+
+    echo "Rodando script SQL..."
+    /opt/mssql-tools/bin/sqlcmd -S sqlserver-service -U sa -P 'YourStrong!Password' -i /scripts/init.sql
+  ACCEPT_EULA: "Y"
+  SA_PASSWORD: "YourStrong!Password"
+  MSSQL_PID: "Express"

@@ -1,0 +1,27 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: sqlserver-init-job
+spec:
+  template:
+    metadata:
+      name: sqlserver-init
+    spec:
+      restartPolicy: Never
+      containers:
+      - name: run-sql-scripts
+        image: mcr.microsoft.com/mssql-tools
+        command: ["/bin/sh", "-c", "/scripts/init.sh"]
+        volumeMounts:
+        - name: scripts
+          mountPath: /scripts
+        env:
+        - name: SA_PASSWORD
+          value: "YourStrong!Password"
+      volumes:
+      - name: scripts
+        configMap:
+          name: sql-init-scripts
+          defaultMode: 0755
+  backoffLimit: 4
+     

@@ -12,20 +12,14 @@ spec:
       labels:
         app: sqlserver
     spec:
-      securityContext:
-        fsGroup: 1000
       containers:
       - name: sqlserver
         image: mcr.microsoft.com/mssql/server:2022-latest
         ports:
         - containerPort: 1433
-        env:
-        - name: ACCEPT_EULA
-          value: "Y"
-        - name: SA_PASSWORD
-          value: "YourStrong!Password"
-        - name: MSSQL_PID
-          value: "Express"
+        envFrom:
+        - configMapRef:
+            name: sqlserver-config
         volumeMounts:
         - name: mssql-data
           mountPath: /var/opt/mssql
@@ -33,7 +27,4 @@ spec:
       - name: mssql-data
         persistentVolumeClaim:
           claimName: sqlserver-pvc
-      - name: scripts
-        configMap:
-          name: sqlserver-scripts
-          defaultMode: 0777
+
