@@ -1,12 +1,12 @@
 _format_version: "3.0"
 
 services:
-  - name: contacts-producer-microservice
+  - name: contacts-producer-service
     host: contact-producer-microservice
     port: 8080
     protocol: http
     routes:
-      - name: contacts-producer-microservice
+      - name: contacts-producer-service
         paths: ["/"]
 
   - name: azure-function-service
