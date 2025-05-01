@@ -3,6 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: sqlserver-pvc
 spec:
+  volumeName: sqlserver-pv
   accessModes:
     - ReadWriteOnce
   resources:

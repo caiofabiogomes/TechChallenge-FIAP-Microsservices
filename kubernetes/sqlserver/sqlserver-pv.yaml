@@ -4,7 +4,7 @@ metadata:
   name: sqlserver-pv
 spec:
   capacity:
-    storage: 500Mi
+    storage: 5Gi
   accessModes:
     - ReadWriteOnce
   hostPath:
