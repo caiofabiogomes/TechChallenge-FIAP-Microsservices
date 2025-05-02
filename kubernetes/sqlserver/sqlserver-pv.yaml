@@ -4,8 +4,10 @@ metadata:
   name: sqlserver-pv
 spec:
   capacity:
-    storage: 5Gi
+    storage: 2Gi
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: "C:/data/sqlserver"
+    path: /run/desktop/mnt/host/c/sqlserver-data
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: hostpath

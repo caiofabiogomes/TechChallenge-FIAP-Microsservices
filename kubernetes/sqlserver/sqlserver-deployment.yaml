@@ -12,6 +12,14 @@ spec:
       labels:
         app: sqlserver
     spec:
+      initContainers:
+      - name: fix-permissions
+        image: busybox
+        command: ["sh", "-c", "chown -R 10001:10001 /var/opt/mssql"]
+        volumeMounts:
+          - name: mssql-data
+            mountPath: /var/opt/mssql
+
       containers:
       - name: sqlserver
         image: mcr.microsoft.com/mssql/server:2022-latest
@@ -22,7 +30,7 @@ spec:
             name: sqlserver-config
         volumeMounts:
         - name: mssql-data
-          mountPath: /var/opt/mssql
+          mountPath: /var/opt/mssql/data
         livenessProbe:
           tcpSocket:
             port: 1433
