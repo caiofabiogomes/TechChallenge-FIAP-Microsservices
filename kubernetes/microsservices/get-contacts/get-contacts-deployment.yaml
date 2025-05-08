@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: get-contacts-deployment
+  labels:
+    app: get-contacts
+  annotations:
+    type: "get-contacts"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: get-contacts
+  template:
+    metadata:
+      labels:
+        app: get-contacts
+    spec:
+      containers:
+      - name: get-contacts
+        image: caiofabiogomes/tc-fiap-az-get-contacts:latest
+        ports:
+        - containerPort: 80
+        env:
+        - name: RABBITMQ_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: get-contacts-configmap
+              key: rabbitmq_host
+        - name: CONNECTION_DATABASE
+          valueFrom:
+            configMapKeyRef:
+              name: get-contacts-configmap
+              key: cn_db

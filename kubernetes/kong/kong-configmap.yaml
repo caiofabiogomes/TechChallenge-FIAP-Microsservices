@@ -18,7 +18,7 @@ data:
               - http 
 
       - name: azure-function-service
-        host: consulta-contact-microservice
+        host: get-contacts-service
         port: 80
         protocol: http
         routes:
