@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: grafana
+  name: grafana
+spec:
+  selector:
+    matchLabels:
+      app: grafana
+  template:
+    metadata:
+      labels:
+        app: grafana
+    spec:
+      securityContext:
+        runAsUser: 0 # Usuário com permissões para o Grafana
+      #   fsGroup: 472  # Garante permissões adequadas nos volumes
+      #   runAsGroup: 472  # Grupo com permissões para o Grafana
+      containers:
+        - name: grafana
+          image: grafana/grafana:latest
+          ports:
+            - containerPort: 3000
+              name: http-grafana
+              protocol: TCP
+          volumeMounts:
+          - name: grafana-datasource
+            mountPath: /etc/grafana/provisioning/datasources
+          - name: grafana-dashboard-config
+            mountPath: /etc/grafana/provisioning/dashboards
+          - name: grafana-dashboards
+            mountPath: /var/lib/grafana/dashboards
+          - name: grafana-storage
+            mountPath: /var/lib/grafana
+
+      volumes:
+        - name: grafana-datasource
+          configMap:
+            name: grafana-datasource
+        - name: grafana-dashboard-config
+          configMap:
+            name: grafana-dashboard-config
+        - name: grafana-dashboards
+          configMap:
+            name: grafana-dashboards
+        - name: grafana-storage
+          persistentVolumeClaim:
+            claimName: grafana-pvc
