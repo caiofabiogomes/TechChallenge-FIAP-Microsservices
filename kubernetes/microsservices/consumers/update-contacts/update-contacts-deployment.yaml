@@ -7,7 +7,7 @@ metadata:
   annotations:
     type: "consumer"
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: update-contacts
@@ -32,3 +32,22 @@ spec:
             configMapKeyRef:
               name: update-contacts-configmap
               key: cn_db
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: update-contacts-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: update-contacts
+  minReplicas: 3
+  maxReplicas: 10
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 70
