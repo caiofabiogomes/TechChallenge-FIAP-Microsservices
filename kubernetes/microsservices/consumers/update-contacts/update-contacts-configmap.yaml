@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: update-contacts-configmap
+data:
+  rabbitmq_host: "rabbitmq-service"
+  cn_db: "Server=sqlserver-service;Database=ContactsDb;User Id=sa;Password=YourStrong!Password;TrustServerCertificate=True"

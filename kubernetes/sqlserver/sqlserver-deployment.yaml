@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sqlserver-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sqlserver
+  template:
+    metadata:
+      labels:
+        app: sqlserver
+    spec:
+      initContainers:
+      - name: fix-permissions
+        image: busybox
+        command: ["sh", "-c", "chown -R 10001:10001 /var/opt/mssql"]
+        volumeMounts:
+          - name: mssql-data
+            mountPath: /var/opt/mssql
+
+      containers:
+      - name: sqlserver
+        image: mcr.microsoft.com/mssql/server:2022-latest
+        ports:
+        - containerPort: 1433
+        envFrom:
+        - configMapRef:
+            name: sqlserver-config
+        volumeMounts:
+        - name: mssql-data
+          mountPath: /var/opt/mssql/data
+        livenessProbe:
+          tcpSocket:
+            port: 1433
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          tcpSocket:
+            port: 1433
+          initialDelaySeconds: 10
+          periodSeconds: 5
+      volumes:
+      - name: mssql-data
+        persistentVolumeClaim:
+          claimName: sqlserver-pvc
+

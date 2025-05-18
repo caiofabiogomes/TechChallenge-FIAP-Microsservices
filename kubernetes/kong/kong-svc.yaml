@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kong-proxy
+spec:
+  type: NodePort
+  ports:
+    - name: proxy
+      port: 8000
+      targetPort: 8000
+      nodePort: 32000
+    - name: proxy-ssl
+      port: 8443
+      targetPort: 8443
+    - name: admin
+      port: 8001
+      targetPort: 8001
+      nodePort: 32001
+    - name: admin-ssl
+      port: 8444
+      targetPort: 8444
+  selector:
+    app: kong
