@@ -7,7 +7,7 @@ metadata:
   annotations:
     type: "producer"
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: contacts-producer

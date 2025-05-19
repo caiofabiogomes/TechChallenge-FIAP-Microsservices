@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: delete-contacts-deployment
+  labels:
+    app: delete-contacts
+  annotations:
+    type: "consumer"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: delete-contacts
+  template:
+    metadata:
+      labels:
+        app: delete-contacts
+    spec:
+      containers:
+      - name: delete-contacts
+        image: caiofabiogomes/tc-fiap-delete-consumer:latest
+        ports:
+        - containerPort: 8082
+        env:
+        - name: RABBITMQ_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: delete-contacts-configmap
+              key: rabbitmq_host
+        - name: CONNECTION_DATABASE
+          valueFrom:
+            configMapKeyRef:
+              name: delete-contacts-configmap
+              key: cn_db
