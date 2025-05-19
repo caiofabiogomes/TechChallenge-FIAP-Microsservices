@@ -6,6 +6,7 @@ Este projeto foi desenvolvido como parte do desafio da pós-graduação em Arqui
 - **.NET 8**
 - **SQL Server**
 - **Docker**
+- **Kubernetes**
 - **Grafana**
 - **Prometheus**
 - **MassTransit com RabbitMQ** (Mensageria)
@@ -42,15 +43,6 @@ Para facilitar a reutilização de código e padronizar a infraestrutura, foi cr
 - **Pacote Nuget De Infraestrutura:** [Link do repositório](https://github.com/caiofabiogomes/TechChallenge.SDK)
 
 
-## Como Executar
-1. Clone os repositórios.
-2. Certifique-se de ter o **Docker e Docker Compose** instalados.
-3. Navegue até o diretório do projeto e execute:
-   ```sh
-   docker-compose up -d
-   ```
-4. Acesse os serviços conforme necessário.
-
 ## Monitoramento
 Após subir os serviços, é possível visualizar os dashboards de monitoramento no **Grafana**, acessando:
 - **Prometheus Metrics**: `http://localhost:9090`
@@ -58,8 +50,8 @@ Após subir os serviços, é possível visualizar os dashboards de monitoramento
 
 ## Rotas
  
-- **Cadastrar contato, Excluir, Atualizar**: `http://localhost:8000/Contacts`
-- **Consultar contato**: `http://localhost:8000/api/GetContactsFunction`
+- **Cadastrar contato, Excluir, Atualizar**: `http://localhost:32000/Contacts`
+- **Consultar contato**: `http://localhost:32000/api/GetContactsFunction`
 
 ## Postman Collection
 
