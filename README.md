@@ -45,8 +45,8 @@ Para facilitar a reutilização de código e padronizar a infraestrutura, foi cr
 
 ## Monitoramento
 Após subir os serviços, é possível visualizar os dashboards de monitoramento no **Grafana**, acessando:
-- **Prometheus Metrics**: `http://localhost:9090`
-- **Grafana Dashboard**: `http://localhost:3000`
+- **Prometheus Metrics**: `http://localhost:31110`
+- **Grafana Dashboard**: `http://localhost:32200`
 
 ## Rotas
  
