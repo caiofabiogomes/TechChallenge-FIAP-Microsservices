@@ -4,6 +4,7 @@ metadata:
   name: rabbitmq-service
 spec:
   type: NodePort
+  #type: ClusteIP #padrao - só acessivel dentro do cluster
   selector:
     app: rabbitmq
   ports:
